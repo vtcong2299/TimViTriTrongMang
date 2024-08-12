@@ -21,29 +21,26 @@ namespace TimViTriTrongMang
                 }
                
             }
-            int count=0;
-            foreach(string nameStudents in students)
+            bool check =false;
+            int i;
+            for(i=0;i<students.Length;i++)
             {
-                if(nameStudents==name)
+                if(String.Compare(name,students[i],true)==0)
                 {
-                    Console.WriteLine("Vi tri cua hoc sinh {0} la: {1}", name,Array.IndexOf(students, name));
+                    Console.WriteLine("Vi tri cua hoc sinh {0} la: {1}", name,i);
+                    check = true;
+                   
                 }   
-                else
-                {
-                    count++;
-                }             
+                        
             }
-            while(true)
-            {
-                if (count==students.Length)
+            
+                if (check==false)
                 {
                     Console.Write("Khong co sinh vien {0} trong danh sach!",name);
-                    break;
+                   
                 }
-                else
-                break;
-            }
-         
+             
+            
         }
     }
 }
